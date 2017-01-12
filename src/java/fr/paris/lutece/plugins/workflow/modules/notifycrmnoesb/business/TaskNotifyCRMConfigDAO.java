@@ -46,10 +46,10 @@ import fr.paris.lutece.util.sql.DAOUtil;
  */
 public class TaskNotifyCRMConfigDAO implements ITaskConfigDAO<TaskNotifyCRMConfig>
 {
-    private static final String SQL_QUERY_FIND_BY_PRIMARY_KEY = " SELECT id_task, status_text, sender, object, message, is_demand_crm_creation FROM task_notify_crm_no_esb_cf  WHERE id_task = ? ";
-    private static final String SQL_QUERY_INSERT = " INSERT INTO task_notify_crm_no_esb_cf( id_task, status_text, sender, object, message, is_demand_crm_creation ) VALUES ( ?,?,?,?,?,? ) ";
-    private static final String SQL_QUERY_UPDATE = "UPDATE task_notify_crm_no_esb_cf SET id_task = ?, status_text = ?,sender = ?, object = ?, message = ?, is_demand_crm_creation = ? WHERE id_task = ? ";
-    private static final String SQL_QUERY_DELETE = " DELETE FROM task_notify_crm_no_esb_cf WHERE id_task = ? ";
+    private static final String SQL_QUERY_FIND_BY_PRIMARY_KEY = " SELECT id_task, status_text, sender, object, message, is_demand_crm_creation FROM workflow_task_notify_crm_no_esb_cf  WHERE id_task = ? ";
+    private static final String SQL_QUERY_INSERT = " INSERT INTO workflow_task_notify_crm_no_esb_cf( id_task, status_text, sender, object, message, is_demand_crm_creation ) VALUES ( ?,?,?,?,?,? ) ";
+    private static final String SQL_QUERY_UPDATE = "UPDATE workflow_task_notify_crm_no_esb_cf SET id_task = ?, status_text = ?,sender = ?, object = ?, message = ?, is_demand_crm_creation = ? WHERE id_task = ? ";
+    private static final String SQL_QUERY_DELETE = " DELETE FROM workflow_task_notify_crm_no_esb_cf WHERE id_task = ? ";
     /**
      * {@inheritDoc}
      */
