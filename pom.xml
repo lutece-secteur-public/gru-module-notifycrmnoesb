@@ -78,17 +78,17 @@
         </dependency>
     </dependencies>
 	
-<!--    <properties>
-        <componentName>workflow-notifycrm</componentName>
-        <jiraProjectName>WORKFLOWNOTIFYCRM</jiraProjectName>
-        <jiraComponentId>10562</jiraComponentId>
-    </properties>-->
+    <properties>
+        <componentName>workflow-notifycrmnoesb</componentName>
+        <jiraProjectName>MWNNESB</jiraProjectName>
+        <jiraComponentId>13666</jiraComponentId>
+    </properties>
     
-<!--    <scm>
-        <connection>scm:git:https://github.com/lutece-secteur-public/gru-module-workflow-notifycrm.git</connection>
-        <developerConnection>scm:git:https://github.com/lutece-secteur-public/gru-module-workflow-notifycrm.git</developerConnection>
-        <url>https://github.com/lutece-secteur-public/gru-module-workflow-notifycrm.git</url>
+    <scm>
+        <connection>scm:git:https://github.com/lutece-secteur-public/gru-module-workflow-notifycrmnoesb.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-secteur-public/gru-module-workflow-notifycrmnoesb.git</developerConnection>
+        <url>https://github.com/lutece-secteur-public/gru-module-workflow-notifycrmnoesb.git</url>
       <tag>HEAD</tag>
-  </scm>-->
+    </scm>
     
 </project>
