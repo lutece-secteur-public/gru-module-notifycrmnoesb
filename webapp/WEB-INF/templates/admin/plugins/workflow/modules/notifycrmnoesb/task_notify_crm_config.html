@@ -1,0 +1,74 @@
+<#include "/admin/util/editor/editor.html" />
+
+<#assign message = "">
+<#assign demandCRMCreation = true>
+<#assign statusText = "">
+<#assign object = "">
+<#assign sender = "">
+<#if config??>
+	<#assign message = config.message>
+	<#assign statusText = config.statusText>
+	<#assign demandCRMCreation = config.demandCRMCreation>
+        <#assign object = config.object>
+        <#assign sender = config.sender>
+</#if>
+<div>
+	<fieldset>
+		<legend>#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.title}</legend>
+		<br/>
+                <div class="control-group">
+			<label class="control-label" for="statusText">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_status_text} * :</label>
+			<div class="controls">
+				<input type="text" name="statusText" value="${statusText!}" size="80" maxlength="255" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="sendNotification">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_demand_crm_creation} :</label>
+			<div class="controls">
+				<label class="checkbox">
+					<input type="radio" name="demandCRMCreation" value="true" <#if demandCRMCreation>checked="checked"</#if> />
+					&nbsp;#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_demand_crm_creation.yes}
+				</label>
+				<label class="checkbox">
+					<input type="radio" name="demandCRMCreation" value="false" <#if !demandCRMCreation>checked="checked"</#if> />
+					&nbsp;#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_demand_crm_creation.no}
+				</label>
+			</div>
+		</div>
+                
+                <div class="control-group">
+			<label class="control-label" for="sender">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_sender} * :</label>
+			<div class="controls">
+				<input type="text" name="sender" value="${sender!}" size="80" maxlength="255" />
+			</div>
+		</div>
+                <div class="control-group">
+			<label class="control-label" for="object">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_object} * :</label>
+			<div class="controls">
+				<input type="text" name="object" value="${object!}" size="80" maxlength="255" />
+			</div>
+		</div>
+                
+                <div class="control-group">
+			<label class="control-label" for="message">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_message} * :</label>
+			<div class="controls editor">
+				<textarea name="message" id="" rows="20" cols="90" class="richtext">${message}</textarea>
+				<span class="help-block">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_message_comment}</span>
+                                <span class="help-block">#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_attribute_comment}</span>
+                                <#list listMarkers as marker>
+                                    <span class="help-block">${marker}</span>
+                                </#list>
+			</div>
+		</div>
+                <div class="control-group">
+			<div class="controls">
+				<button class="btn btn-small btn-primary" type="submit" name="apply" value="#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_apply}">
+					<i class="icon-ok icon-white">&nbsp;</i>&nbsp;#i18n{module.workflow.notifycrmnoesb.task_notify_crm_config.label_apply}
+				</button>
+			</div>
+		</div>
+		<br/>
+	</fieldset>
+</div>
+
+<@initEditor />
