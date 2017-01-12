@@ -71,9 +71,6 @@ public class NotifyCRMTaskComponent extends NoFormTaskComponent
 {
     private static final String TEMPLATE_TASK_NOTIFY_CRM_CONFIG = "admin/plugins/workflow/modules/notifycrmnoesb/task_notify_crm_config.html";
     
-    private static final String BEAN_NOTIFY_CRM_SERVICE = "workflow-notifycrmnoesb.notifyCRMService";
-    
-
     /**
      * {@inheritDoc}
      */
@@ -135,7 +132,7 @@ public class NotifyCRMTaskComponent extends NoFormTaskComponent
     public String getDisplayConfigForm( HttpServletRequest request, Locale locale, ITask task )
     {
         ITaskConfigService taskNotifyCRMConfigService = (ITaskConfigService)SpringContextService.getBean( NotifyCRMConstants.BEAN_TASK_CONFIG_SERVICE );
-        INotifyCRMService notifyCRMService = (INotifyCRMService)SpringContextService.getBean( BEAN_NOTIFY_CRM_SERVICE );
+        INotifyCRMService notifyCRMService = (INotifyCRMService)SpringContextService.getBean( NotifyCRMConstants.NOTIFY_CRM_SERVICE_BEAN_NAME );
         
         Map<String, Object> model = new HashMap<String, Object>(  );
 

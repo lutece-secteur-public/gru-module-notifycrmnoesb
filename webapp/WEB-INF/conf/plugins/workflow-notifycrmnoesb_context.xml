@@ -10,10 +10,6 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-	<!-- Transaction Manager -->
-	<!-- <bean id="workflow-notifycrmnoesb.transactionManager" class="fr.paris.lutece.portal.service.database.DAOUtilTransactionManager"
-		p:pluginName="workflow-notifycrmnoesb" /> -->
-	
         <bean id="workflow-notifycrmnoesb.notifyCRMService" class="fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.service.IdeationNotifyCRMService" />
         <bean id="workflow-notifycrmnoesb.taskNotifyCRMConfig" class="fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.business.TaskNotifyCRMConfig" scope="prototype" />
         

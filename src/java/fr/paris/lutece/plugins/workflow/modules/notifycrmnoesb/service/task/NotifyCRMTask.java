@@ -38,6 +38,7 @@ import fr.paris.lutece.plugins.crmclient.util.CRMException;
 import fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.business.TaskNotifyCRMConfig;
 import fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.service.INotifyCRMService;
 import fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.service.taskinfo.NotifyCRMTaskInfoProvider;
+import fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.util.constants.NotifyCRMConstants;
 import fr.paris.lutece.plugins.workflowcore.business.resource.ResourceHistory;
 import fr.paris.lutece.plugins.workflowcore.service.config.ITaskConfigService;
 import fr.paris.lutece.plugins.workflowcore.service.resource.IResourceHistoryService;
@@ -59,13 +60,11 @@ import javax.servlet.http.HttpServletRequest;
 public class NotifyCRMTask extends SimpleTask
 {
     @Inject
-    @Named("workflow-notifycrmnoesb.taskNotifyCRMConfigService")
+    @Named( NotifyCRMConstants.BEAN_TASK_CONFIG_SERVICE )
     private ITaskConfigService _taskConfigService;
     @Inject
     private IResourceHistoryService _resourceHistoryService;
-    private static final String CRM_CLIENT_SERVICE_BEAN_NAME = "crmclient.crmClientService";
-    private static final String NOTIFY_CRM_SERVICE_BEAN_NAME = "workflow-notifycrmnoesb.notifyCRMService";
-    private static final String TASK_INFO_PROVIDER_BEAN_NAME = "workflow-notifycrmnoesb.notifyCRMTaskInfoProvider";
+
     private static final String TASK_NOTIFY_CRM_TITLE = "Notifier Mon Compte";
     
     /**
@@ -101,9 +100,9 @@ public class NotifyCRMTask extends SimpleTask
     @Override
     public void processTask( int nIdResourceHistory, HttpServletRequest request, Locale locale  )
     {
-        ICRMClientService crmClientService = (ICRMClientService)SpringContextService.getBean( CRM_CLIENT_SERVICE_BEAN_NAME );
-        INotifyCRMService notifyCrmService = (INotifyCRMService)SpringContextService.getBean( NOTIFY_CRM_SERVICE_BEAN_NAME );
-        NotifyCRMTaskInfoProvider taskProvider = (NotifyCRMTaskInfoProvider)SpringContextService.getBean( TASK_INFO_PROVIDER_BEAN_NAME );
+        ICRMClientService crmClientService = (ICRMClientService)SpringContextService.getBean( NotifyCRMConstants.CRM_CLIENT_SERVICE_BEAN_NAME );
+        INotifyCRMService notifyCrmService = (INotifyCRMService)SpringContextService.getBean( NotifyCRMConstants.NOTIFY_CRM_SERVICE_BEAN_NAME );
+        NotifyCRMTaskInfoProvider taskProvider = (NotifyCRMTaskInfoProvider)SpringContextService.getBean( NotifyCRMConstants.TASK_INFO_PROVIDER_BEAN_NAME );
         
         ResourceHistory resourceHistory = _resourceHistoryService.findByPrimaryKey( nIdResourceHistory );
         TaskNotifyCRMConfig notifyCRMConfig = (TaskNotifyCRMConfig) _taskConfigService.findByPrimaryKey( getId(  ) );
@@ -112,7 +111,7 @@ public class NotifyCRMTask extends SimpleTask
         int nIdResource = resourceHistory.getIdResource( );
         String strIdDemand = notifyCrmService.getIdDemand( nIdResource );
         String strUserGuid = notifyCrmService.getUserGuid( nIdResource );
-        String strIdDemandType = AppPropertiesService.getProperty( "module.workflow.notifycrmnoesb.crmDemandTypeId" );
+        String strIdDemandType = AppPropertiesService.getProperty( NotifyCRMConstants.PROPERTY_ID_DEMAND_TYPE_CRM );
         String strStatusText = notifyCRMConfig.getStatusText( );
         String strSender = notifyCRMConfig.getSender( );
         String strObject = notifyCRMConfig.getObject( );

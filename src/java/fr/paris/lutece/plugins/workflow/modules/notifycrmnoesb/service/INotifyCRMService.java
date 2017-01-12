@@ -36,14 +36,32 @@ package fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.service;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- * @author alexandre
- */
 public interface INotifyCRMService
 {   
+    /**
+     * Method to get a model filled with resource info
+     * @param nIdRessource the id resource
+     * @return a map with keys and resource info
+     */
     public Map<String,Object> fillModelInfoResource( int nIdRessource );
+    
+    /**
+     * Method to get keys list
+     * @return a list of keys
+     */
     public List<String> getListMarkers( ); 
+    
+    /**
+     * Method to get the id of the demand
+     * @param nIdRessource the resource id of ResourceHistory
+     * @return the idDemand
+     */
     public String getIdDemand( int nIdRessource ); 
+    
+    /**
+     * Method to get the Guid of the ressource creator
+     * @param nIdRessource the resource id of ResourceHistory
+     * @return the user guid
+     */
     public String getUserGuid( int nIdRessource ); 
 }

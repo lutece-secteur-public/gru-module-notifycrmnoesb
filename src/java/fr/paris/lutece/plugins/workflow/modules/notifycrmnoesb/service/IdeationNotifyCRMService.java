@@ -31,6 +31,7 @@
  *
  * License 1.0
  */
+
 package fr.paris.lutece.plugins.workflow.modules.notifycrmnoesb.service;
 
 import fr.paris.lutece.plugins.ideation.business.Idee;
@@ -41,6 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class IdeationNotifyCRMService implements INotifyCRMService
 {
     private static final String MARK_PSEUDO = "pseudo";
@@ -48,6 +50,9 @@ public class IdeationNotifyCRMService implements INotifyCRMService
     private static final String MARK_IDEA_CREATION_DATE = "date_depot_idee";
     private static final String MARK_IDEA_REFERENCE = "idee_reference";
     
+     /**
+     * {@inheritDoc}
+     */
     @Override
     public List<String> getListMarkers( )
     {
@@ -59,6 +64,9 @@ public class IdeationNotifyCRMService implements INotifyCRMService
         return listMarkers;
     }
     
+     /**
+     * {@inheritDoc}
+     */
     @Override
     public Map<String,Object> fillModelInfoResource( int nIdRessource )
     {
@@ -71,12 +79,18 @@ public class IdeationNotifyCRMService implements INotifyCRMService
         return model;
     }
     
+     /**
+     * {@inheritDoc}
+     */
     @Override
     public String getIdDemand( int nIdRessource )
     {
         return Integer.toString( nIdRessource );
     }
     
+     /**
+     * {@inheritDoc}
+     */
     @Override
     public String getUserGuid( int nIdRessource )
     {

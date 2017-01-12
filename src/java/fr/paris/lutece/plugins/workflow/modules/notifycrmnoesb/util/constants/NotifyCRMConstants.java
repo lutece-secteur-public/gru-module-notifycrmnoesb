@@ -46,9 +46,13 @@ public final class NotifyCRMConstants
 
     // BEANS
     public static final String BEAN_TASK_CONFIG_SERVICE = "workflow-notifycrmnoesb.taskNotifyCRMConfigService";
+    public static final String CRM_CLIENT_SERVICE_BEAN_NAME = "crmclient.crmClientService";
+    public static final String NOTIFY_CRM_SERVICE_BEAN_NAME = "workflow-notifycrmnoesb.notifyCRMService";
+    public static final String TASK_INFO_PROVIDER_BEAN_NAME = "workflow-notifycrmnoesb.notifyCRMTaskInfoProvider";
 
     // PROPERTIES
     public static final String PROPERTY_CRMCLIENT_REST_WEBAPP_URL = "crmclient.crm.rest.webapp.url";
+    public static final String PROPERTY_ID_DEMAND_TYPE_CRM = "module.workflow.notifycrmnoesb.crmDemandTypeId";
 
     // MARKS
     public static final String MARK_CONFIG = "config";
