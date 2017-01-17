@@ -49,6 +49,10 @@ public class IdeationNotifyCRMService implements INotifyCRMService
     private static final String MARK_IDEA_TITLE = "titre_idee";
     private static final String MARK_IDEA_CREATION_DATE = "date_depot_idee";
     private static final String MARK_IDEA_REFERENCE = "idee_reference";
+    private static final String MARK_IDEA_MOTIF_RECEIV = "motif_receiv";
+    private static final String MARK_IDEA_ID_PROJECT = "id_projet";
+    private static final String MARK_IDEA_TITLE_PROJECT = "titre_projet";
+    private static final String MARK_IDEA_URL_PROJECT = "url_projet";
     
      /**
      * {@inheritDoc}
@@ -61,6 +65,10 @@ public class IdeationNotifyCRMService implements INotifyCRMService
         listMarkers.add( MARK_IDEA_TITLE );
         listMarkers.add( MARK_IDEA_CREATION_DATE );
         listMarkers.add( MARK_IDEA_REFERENCE );
+        listMarkers.add( MARK_IDEA_MOTIF_RECEIV );
+        listMarkers.add( MARK_IDEA_ID_PROJECT );
+        listMarkers.add( MARK_IDEA_TITLE_PROJECT );
+        listMarkers.add( MARK_IDEA_URL_PROJECT );
         return listMarkers;
     }
     
@@ -76,6 +84,10 @@ public class IdeationNotifyCRMService implements INotifyCRMService
         model.put( MARK_IDEA_TITLE , idee.getTitre( ) );
         model.put( MARK_IDEA_CREATION_DATE, idee.getCreationTimestamp( ) );
         model.put( MARK_IDEA_REFERENCE, idee.getReference( ) );
+        model.put( MARK_IDEA_MOTIF_RECEIV, idee.getMotifRecev( ) );
+        model.put( MARK_IDEA_ID_PROJECT, idee.getIdProjet( ) );
+        model.put( MARK_IDEA_TITLE_PROJECT, idee.getTitreProjet( ) );
+        model.put( MARK_IDEA_URL_PROJECT, idee.getUrlProjet( ) );
         return model;
     }
     
